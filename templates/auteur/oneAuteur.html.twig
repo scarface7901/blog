@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}fiche auteur{% endblock %}
+
+{% block content %}
+    <h2> {{ auteur.nom ~ ' ' ~ auteur.prenom }} </h2>
+    <h5> né(e) le: {{ auteur.dateDeNaissance | date("d/m/Y") }}</h5>
+
+    <div class="row justify-content-center">
+        <div class="col-offset-2 col-8">
+            <p> {{ auteur.biographie }}</p>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}les articles{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+	<h1>Les articles :</h1>
+<div>
+
+<div class="row d-flex justify-content-center text-center">
+
+	{% for article in articles %}
+
+		<div class="card m-1" style="width: 18rem;">
+			<div class="card-body">
+				<div>
+					<a href="{{ path('app_article_update' , {id: article.id} ) }}">
+						<i class="fas fa-edit mx-1 text-success"></i>
+					</a>
+					<a href="{{ path('app_article_delete' , {id: article.id} ) }}"  onClick="return confirm('êtes vous sûr de vouloir supprimer l\'article ?')" >
+						<i class="fas fa-trash mx-1 text-danger"></i>
+					</a>
+				</div>
+
+				<h5 class="card-title"> {{ article.titre }} </h5>
+
+				<h6 class="card-subtitle mb-2 text-muted">crée le : {{ article.dateDeCreation | date("d/m/Y \à H\\hi") }}</h6>
+
+				{# on affiche la date de modification uniquement si celle ci exsiste #}
+				{% if article.dateDeModification is not null %}
+					<h6 class="card-subtitle mb-2 text-muted">modifié le: {{ article.dateDeModification | date("d/m/Y \à H\\hi") }}</h6>
+				{% endif %}
+				
+
+				<h6>auteur :</h6>
+				
+				<p class="card-text"> {{ article.contenu | slice(0,100) }} ...</p>
+
+				<a href="{{ path('app_article' , {id: article.id} ) }}" class="btn btn-primary card-link">lire l'article</a>
+			</div>
+		</div>
+		
+	{% endfor %}
+</div>
+
+{% endblock %}

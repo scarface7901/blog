@@ -1,0 +1,34 @@
+ - Pour cet exercice vous allez créer une copie de votre projet "blogExo" et vous exercer la dessus.
+
+- créez une entité "Auteur" avec les propritées suivantes :
+                    - nom (string, 100, not null)
+                    - prenom (string, 100, not null)
+                    - dateDeNaissance (date, not null)
+                    - biographie (text, not null)
+
+    **solution : exécuter "symfony console make:entity Auteur" puis suivre les indications dans le terminal afin d'ajouter les propriétés
+
+
+- créez le fichier de migration puis executer là (vérifiez que votre table auteur est créé dans votre bdd)
+    **solution: exécuter "symfony console make:migration" puis "symfony console doctrine:migrations:migrate"
+
+
+-  créez un controller pour Auteur et faire les traitement suivant :
+        **solution: "symfony console make:controller Auteur"
+                    - créez un fomulaire pour l'ajout d'auteurs , faire le traitement dans une methode  dans le controller puis l'afficher dans une page twig
+                    - ajoutez quelques auteurs dans votre bdd 
+                          **solution: "symfony console make:form Auteur"  puis suivre les instructions, pour la methode voir le controller
+
+                    - créez une nouvelle methode qui permet de recuperer la liste des auteurs pour l'afficher sur une page twig dans un table (nom, prenom , action (voir,modifier,supprimer) )
+                                ** voir la methode add() dans le controller AuteurController puis le template dans auteur/allAuteurs.html.twig
+
+                    - créez une methode qui vous permet de recuperer un auteur pour afficher ses informations dans une page twig en passant par le boutton voir de la page précedente
+                    - créez une methode qui permet de modifier un auteur via un formualire en passant par le boutton modifier de la page du tableau 
+                    - créez une methode qui permet de supprimer un auteur via le boutton supprimer du tableau
+
+
+
+
+création d'une entité : symfony console make:entity Auteur
+   //  //  formulaire : symfony console make:form Auteur
+   //  //  controller : symfony console make:controller Auteur                   

@@ -1,0 +1,117 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<header>
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">Blog</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="toggle collaps navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="{{ path('app_home') }}">
+								Accueil
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path("app_articles") }}"> Articles</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="">
+								Connexion
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="">
+								Inscription
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="">
+								Deconnexion
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="">
+								Profil
+							</a>
+						</li>
+
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+								Admin
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								<li>
+									<a class="dropdown-item" href="{{ path('app_article_add') }}">Ajout article</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="">Ajout categorie</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('app_auteur_add') }}">Ajout auteurs</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="">Liste categories</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('app_auteurs') }}">Liste auteurs</a>
+								</li>
+							</ul>
+						</div>
+					</ul>
+
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container mb-5 pb-5">
+		{% block content %}
+			{# ce block restera vide ici, c'est là ou viendera s'inserer le contenu propre à chaque page aprés héritage #}
+		{% endblock %}
+	</main>
+
+	<footer class="fixed-bottom bg-light">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path("app_cgv") }}">
+							- CGV</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="">
+							- Nous contacter
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="">
+							- Qui sommes nous</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="">
+							- Nos Valeurs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="">
+							- Devenir Blogueur
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="">
+							- Rejoindre l'équipe</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</footer>
+
+{% endblock body %}

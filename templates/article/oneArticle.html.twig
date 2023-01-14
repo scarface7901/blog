@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}fiche article{% endblock %}
+
+{% block content %}
+    <div class="row d-flex justify-content-center text-center">  
+
+            <div>
+                <a href="{{ path('app_article_update' , {id: article.id} ) }}">
+                    <i class="fas fa-edit mx-1 text-success"></i>
+                </a>
+                <a href="{{ path('app_article_delete' , {id: article.id} ) }}" onclick="return confirm('êtes vous sûr de vouloir supprimer l\'article ?')">
+                    <i class="fas fa-trash mx-1 text-danger"></i>
+                </a>
+            </div>
+
+            <h1>{{ article.titre }}</h1>
+            <h6 class="text-muted"> publié le : {{ article.dateDeCreation | date("d/m/Y \à H\\hi") }} </h6>
+            <h6 class="text-muted"> modifié le : </h6>
+            <h6>auteur de l'article</h6>
+         
+            <p>{{ article.contenu }}</p>
+    </div>
+{% endblock %}

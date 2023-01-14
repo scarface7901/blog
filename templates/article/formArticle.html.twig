@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}formulaire article{% endblock %}
+
+{% block content %}
+    <h1>Ajout d'un article :<h1>
+
+    {# on affiche un formulaire via la fonction twig form() en lui passant en paramétre le form crée dans le controller #}
+    {{ form(formArticle) }}
+
+{% endblock %}
